@@ -1,0 +1,418 @@
+/* Reset & base */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f9f9f9, #e9f0ff);
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Header */
+.app-header {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.app-header button {
+  background: white;
+  color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.app-header button:hover {
+  background: #007bff;
+  color: white;
+  box-shadow: 0 0 12px rgba(255,255,255,0.8);
+}
+
+/* Main container */
+.screen-container {
+  max-width: 850px;
+  margin: 40px auto;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(8px);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Chat List */
+.chat-item {
+  padding: 18px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+}
+
+.chat-item:hover {
+  background: #f0f8ff;
+  transform: translateX(4px);
+}
+
+.chat-item strong {
+  font-size: 18px;
+  color: #2c3e50;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.chat-item p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.chat-item span {
+  font-size: 12px;
+  color: #999;
+  float: right;
+}
+
+/* Chat Window */
+.chat-container {
+  padding: 20px;
+}
+
+.chat-thread {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-message {
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-size: 15px;
+  line-height: 1.4;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.chat-message strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.chat-message:nth-child(odd) {
+  align-self: flex-start;
+  background: #f1f5ff;
+  color: #2c3e50;
+}
+
+.chat-message:nth-child(even) {
+  align-self: flex-end;
+  background: #007bff;
+  color: white;
+}
+
+/* Buttons */
+.chat-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.chat-actions button {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chat-actions button:hover {
+  background: linear-gradient(135deg, #0056b3, #007bff);
+  box-shadow: 0 0 10px rgba(0,123,255,0.5);
+}
+
+/* Inputs */
+.chat-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.chat-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0,123,255,0.3);
+}
+
+/* AI response */
+.chat-response {
+  margin-top: 16px;
+  font-style: italic;
+  color: #444;
+  background: #f8f9fa;
+  padding: 12px 16px;
+  border-radius: 10px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.back-btn {
+  background: linear-gradient(135deg, #f0f2f5, #e0e7ff);
+  color: #007bff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.back-btn:hover {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  transform: translateX(-2px);
+  box-shadow: 0 4px 10px rgba(0,123,255,0.3);
+}
+.icebreaker-btn {
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(255, 118, 136, 0.4);
+}
+
+.icebreaker-btn:hover {
+  background: linear-gradient(135deg, #ff4b8a, #ff006e);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 0, 110, 0.5);
+}
+.chat-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+}
+
+.chat-item:hover {
+  background: #f0f8ff;
+  transform: translateX(4px);
+}
+
+.chat-icon {
+  font-size: 28px;
+  color: #007bff;
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
+.chat-info {
+  flex-grow: 1;
+}
+
+.chat-info strong {
+  font-size: 18px;
+  color: #2c3e50;
+  display: block;
+}
+
+.chat-info p {
+  margin: 4px 0;
+  color: #555;
+  font-size: 14px;
+}
+.chat-response {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f4f4f8;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.chat-name {
+  font-size: 16px;
+}
+
+.chat-message {
+  margin-left: 40px; /* indent msg under the icon+name */
+  color: #333;
+}
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  letter-spacing: 1px;
+}
+
+h2::before {
+  content: "💬"; /* emoji as extra charm */
+  font-size: 24px;
+}
+.avatar {
+  width: 36px;
+  height: 36px;
+  background: #4cafef;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.chat-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+/* Chat message container */
+.chat-message {
+  position: relative; /* allow avatar positioning */
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-size: 15px;
+  line-height: 1.4;
+  animation: fadeIn 0.3s ease-in-out;
+  margin-left: 40px; /* leave space for avatar */
+  background: #f1f5ff;
+  color: #2c3e50;
+}
+
+/* Alternate messages */
+.chat-message:nth-child(even) {
+  margin-left: auto; /* right side messages */
+  margin-right: 40px;
+  background: #007bff;
+  color: white;
+}
+
+/* Avatar outside box */
+.avatar {
+  width: 36px;
+  height: 36px;
+  background: #4cafef;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  position: absolute;
+  top: 12px;
+  left: -50px; /* move outside the left side */
+}
+
+.chat-message:nth-child(even) .avatar {
+  left: auto;
+  right: -50px; /* move outside the right side for even messages */
+}
+/* Chat message container */
+.chat-message {
+  position: relative;
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-size: 15px;
+  line-height: 1.4;
+  animation: fadeIn 0.3s ease-in-out;
+  margin-left: 40px; /* leave space for avatar */
+  background: #f1f5ff;
+  color: #2c3e50;
+  text-align: left; /* ensure text is left-aligned */
+}
+
+/* Remove the alternate right side styling */
+.chat-message:nth-child(even) {
+  margin-left: 40px; /* same as left side */
+  margin-right: auto;
+  background: #f1f5ff;
+  color: #2c3e50;
+}
+
+/* Avatar outside box */
+.avatar {
+  width: 36px;
+  height: 36px;
+  background: #4cafef;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  position: absolute;
+  top: 12px;
+  left: -50px; /* keep avatar on left side for all */
+}
+
+/* Remove right-side avatar positioning */
+.chat-message:nth-child(even) .avatar {
+  left: -50px;
+  right: auto;
+}
